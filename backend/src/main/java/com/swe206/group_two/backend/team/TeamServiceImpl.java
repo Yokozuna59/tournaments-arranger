@@ -37,6 +37,9 @@ public class TeamServiceImpl implements TeamService {
     public void deleteTeamById(Integer id) {
         teamRepository.deleteById(id);
     }
+    public Optional<Team> getTeamByTournamentId(Integer touramentId) {
+        return teamRepository.findByTournamentId(touramentId);
+    }
 
 }
 
