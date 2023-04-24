@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TeamServiceImpl implements TeamService {
     @Autowired
-    private com.swe206.group_two.backend.team.teamRepository teamRepository;
+    private TeamRepository teamRepository;
 
     @Override
     public List<Team> getAllTeams() {
@@ -42,5 +42,3 @@ public class TeamServiceImpl implements TeamService {
     }
 
 }
-
-

@@ -57,7 +57,7 @@ public class TeamController {
         }
     }
 
-    @GetMapping("{id}")
+    @GetMapping("{tournamentId}")
     public ResponseEntity<Team> getTeamByTournamentId(@PathVariable("tournament_id") Integer TouramentId) {
         try {
             Optional<Team> teams = teamServiceImpl.getTeamByTournamentId(TouramentId);
