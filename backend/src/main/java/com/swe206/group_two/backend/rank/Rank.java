@@ -29,11 +29,12 @@ public class Rank {
     public Rank() {
     }
 
-    public Rank(Integer id, Integer tournamentId, Integer participantId, Integer currentRank) {
+    public Rank(Integer id, Integer tournamentId, Integer participantId,
+            Integer currentRank) {
         this.id = id;
         this.tournamentId = tournamentId;
         this.participantId = participantId;
-        this.currentRank = currentRank;   
+        this.currentRank = currentRank;
     }
 
     public Integer getId() {
@@ -44,7 +45,7 @@ public class Rank {
         return tournamentId;
     }
 
-    public Integer getParticipantId(){
+    public Integer getParticipantId() {
         return participantId;
     }
 
@@ -75,8 +76,7 @@ public class Rank {
                 this.id,
                 this.tournamentId,
                 this.participantId,
-                this.currentRank
-                );
+                this.currentRank);
     }
 
     @Override

@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "maches")
+@Table(name = "matches")
 public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,10 +27,10 @@ public class Match {
     @Column(name = "second_participant_id", nullable = false)
     private Integer secondParticipantId;
 
-    @Column(name = "first_participant_scores") //nullable
+    @Column(name = "first_participant_scores")
     private Integer firstParticipantScores;
 
-    @Column(name = "second_participant_scores") //nullable
+    @Column(name = "second_participant_scores")
     private Integer secondParticipantScores;
 
     @Column(name = "match_date", nullable = false)
@@ -39,14 +39,16 @@ public class Match {
     public Match() {
     }
 
-    public Match(Integer id, Integer tournamentId, Integer firstParticipantId, Integer secondParticipantId, Integer firstParticipantScores, Integer secondParticipantScores, Date matchDate) {
+    public Match(Integer id, Integer tournamentId, Integer firstParticipantId,
+            Integer secondParticipantId, Integer firstParticipantScores,
+            Integer secondParticipantScores, Date matchDate) {
         this.id = id;
         this.tournamentId = tournamentId;
         this.firstParticipantId = firstParticipantId;
         this.secondParticipantId = secondParticipantId;
         this.firstParticipantScores = firstParticipantScores;
         this.secondParticipantScores = secondParticipantScores;
-        this.matchDate = matchDate;        
+        this.matchDate = matchDate;
     }
 
     public Integer getId() {
@@ -61,16 +63,8 @@ public class Match {
         return firstParticipantId;
     }
 
-    public void setFirstParticipantId(Integer firstParticipantId) {
-        this.firstParticipantId = firstParticipantId;
-    }
-
     public Integer getSecondParticipantId() {
         return secondParticipantId;
-    }
-
-    public void setSecondParticipantId(Integer secondParticipantId) {
-        this.secondParticipantId = secondParticipantId;
     }
 
     public Integer getFirstParticipantScores() {
@@ -97,16 +91,13 @@ public class Match {
         this.matchDate = matchDate;
     }
 
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
         if (!(o instanceof Match))
             return false;
-            Match match = (Match) o;
+        Match match = (Match) o;
         return Objects.equals(this.id, match.id)
                 && Objects.equals(this.tournamentId, match.tournamentId)
                 && Objects.equals(this.firstParticipantId, match.firstParticipantId)
@@ -137,7 +128,7 @@ public class Match {
                 + "secondParticipantId=" + this.secondParticipantId + ", "
                 + "firstParticipantScores=" + this.firstParticipantScores + ", "
                 + "secondParticipantScores=" + this.secondParticipantScores + ", "
-                + "matchDate=" + this.matchDate + ""
+                + "matchDate='" + this.matchDate + "'"
                 + '}';
     }
 }

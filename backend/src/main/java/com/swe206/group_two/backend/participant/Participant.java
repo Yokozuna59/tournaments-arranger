@@ -32,12 +32,12 @@ public class Participant {
     public Participant() {
     }
 
-    public Participant(Integer id ,Integer userId, Integer tournamentId, Integer teamId, Integer participantCurrentPoints) {
+    public Participant(Integer id, Integer userId, Integer tournamentId,
+            Integer teamId, Integer participantCurrentPoints) {
         this.id = id;
         this.userId = userId;
         this.tournamentId = tournamentId;
         this.participantCurrentPoints = participantCurrentPoints;
-
     }
 
     public Integer getId() {
@@ -60,7 +60,8 @@ public class Participant {
         return participantCurrentPoints;
     }
 
-    public void setParticipantCurrentPoints(Integer participantCurrentPoints) {
+    public void setParticipantCurrentPoints(
+            Integer participantCurrentPoints) {
         this.participantCurrentPoints = participantCurrentPoints;
     }
 
@@ -85,8 +86,7 @@ public class Participant {
                 this.userId,
                 this.tournamentId,
                 this.teamId,
-                this.participantCurrentPoints
-                );
+                this.participantCurrentPoints);
     }
 
     @Override
