@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS participants (
 CREATE TABLE IF NOT EXISTS ranks (
     rank_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     tournament_id INT NOT NULL,
-    participant_id INT NOT NULL,
-    current_rank INT NOT NULL
+    participant_id INT,
+    current_rank INT
 );
 
 CREATE TABLE IF NOT EXISTS sports (
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS sports (
 CREATE TABLE IF NOT EXISTS teams (
     team_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     tournament_id INT NOT NULL,
-    rank_id INT
+    rank_id INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS tournaments (

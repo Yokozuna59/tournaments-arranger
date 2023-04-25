@@ -18,9 +18,15 @@ public class TeamServiceImpl implements TeamService {
         teamRepository.findAll().forEach(teams::add);
         return teams;
     }
+
     @Override
     public Optional<Team> getTeamById(Integer id) {
         return teamRepository.findById(id);
+    }
+
+    @Override
+    public List<Team> getTeamsByTournamentId(Integer touramentId) {
+        return teamRepository.findAllByTournamentId(touramentId);
     }
 
     @Override
@@ -37,8 +43,4 @@ public class TeamServiceImpl implements TeamService {
     public void deleteTeamById(Integer id) {
         teamRepository.deleteById(id);
     }
-    public Optional<Team> getTeamByTournamentId(Integer touramentId) {
-        return teamRepository.findByTournamentId(touramentId);
-    }
-
 }
