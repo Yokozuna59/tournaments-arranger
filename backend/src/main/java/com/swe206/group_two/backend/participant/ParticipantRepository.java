@@ -20,5 +20,4 @@ public interface ParticipantRepository extends JpaRepository<Participant, Intege
 
     @Override
     public abstract void deleteById(Integer id);
-
 }

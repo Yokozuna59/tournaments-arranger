@@ -20,7 +20,6 @@ public class Rank {
     @Column(name = "tournament_id", nullable = false)
     private Integer tournamentId;
 
-
     @Column(name = "participant_id")
     private Integer participantId;
 
