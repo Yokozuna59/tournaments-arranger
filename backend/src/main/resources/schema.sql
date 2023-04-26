@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS sports (
 
 CREATE TABLE IF NOT EXISTS teams (
     team_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    team_name VARCHAR NOT NULL,
     tournament_id INT NOT NULL,
     rank_id INT NOT NULL
 );
