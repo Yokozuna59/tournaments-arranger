@@ -20,20 +20,20 @@ public class Rank {
     @Column(name = "tournament_id", nullable = false)
     private Integer tournamentId;
 
-    @Column(name = "participant_id", nullable = false)
+    @Column(name = "participant_id")
     private Integer participantId;
 
-    @Column(name = "current_rank", nullable = false)
+    @Column(name = "current_rank")
     private Integer currentRank;
 
     public Rank() {
     }
 
-    public Rank(Integer id, Integer tournamentId, Integer participantId, Integer currentRank) {
-        this.id = id;
+    public Rank(Integer tournamentId, Integer participantId,
+            Integer currentRank) {
         this.tournamentId = tournamentId;
         this.participantId = participantId;
-        this.currentRank = currentRank;   
+        this.currentRank = currentRank;
     }
 
     public Integer getId() {
@@ -44,7 +44,7 @@ public class Rank {
         return tournamentId;
     }
 
-    public Integer getParticipantId(){
+    public Integer getParticipantId() {
         return participantId;
     }
 
@@ -75,8 +75,7 @@ public class Rank {
                 this.id,
                 this.tournamentId,
                 this.participantId,
-                this.currentRank
-                );
+                this.currentRank);
     }
 
     @Override
