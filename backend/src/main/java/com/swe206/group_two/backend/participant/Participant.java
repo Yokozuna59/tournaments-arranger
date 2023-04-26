@@ -32,8 +32,8 @@ public class Participant {
     public Participant() {
     }
 
-    public Participant(Integer userId, Integer tournamentId,
-            Integer teamId, Integer participantCurrentPoints) {
+    public Participant(Integer userId, Integer tournamentId, Integer teamId,
+            Integer participantCurrentPoints) {
         this.userId = userId;
         this.tournamentId = tournamentId;
         this.participantCurrentPoints = participantCurrentPoints;
