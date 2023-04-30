@@ -63,6 +63,15 @@ public class MatchServiceImpl implements MatchService {
     public void deleteMatchById(Integer id) {
         matchRepository.deleteById(id);
     }
+    
+    @Override
+    public Match setMatchScoreById(Integer id,
+            Integer firstParticipantScores, Integer secondParticipantScores) {
+        Match match = matchRepository.findById(id).get();
+        match.setFirstParticipantScores(firstParticipantScores);
+        match.setSecondParticipantScores(secondParticipantScores);
+        return matchRepository.save(match);
+    }
 
     @Override
     public List<Match> generateMatches(Integer tournamentId) {
@@ -181,9 +190,4 @@ public class MatchServiceImpl implements MatchService {
             i++;
         }
     }
-
-    // @Override
-    // public void changeMatchPoints(Integer points) {
-    // matchRepository.setPoints(points);
-    // }
 }
